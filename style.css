@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "poppins";
+}
+
+.text-white {
+  color: #fff;
+}
+
+#container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(to right, #4daf54, #1dbfaf);
+}
+
+.form {
+  background: #fff;
+  padding: 30px 40px;
+  width: 400px;
+  border-radius: 5px;
+}
+
+.form h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: 10px;
+  color: #1dbfaf;
+  text-transform: uppercase;
+  font-size: 27px;
+}
+
+.form-group label {
+  color: #1dbfaf;
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px 10px;
+  border-radius: 2px #ccc;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-submit {
+  background-color: #1aaaaa;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 20px;
+  width: 100%;
+  font-size: 16px;
+}
+
+.form-submit:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.form-message {
+  font-size: 12px;
+  color: #ff0033;
+}
+
+input {
+  border-radius: 2px;
+  border: rgb(0, 0, 0, 0.5) 1px solid;
+}
+
+.invalid input {
+  border: #ff0033 1px solid;
+}

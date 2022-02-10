@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đăng kí thành viên</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div id="container">
+      <form action="" class="form" id="form-1">
+        <div class="form-header">
+          <h2>Member registration</h2>
+        </div>
+        <div class="form-group">
+          <label for="full-name">Full name: </label>
+          <input
+            type="text"
+            name="full-name"
+            id="full-name"
+            placeholder="Eg. Phan Thanh Hau"
+          />
+          <span class="form-message"></span>
+        </div>
+        <div class="form-group">
+          <label for="email">Email: </label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Eg. phanthanhhau@gmail.com"
+          />
+          <span class="form-message"></span>
+        </div>
+        <div class="form-group">
+          <label for="password">Password: </label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Enter password"
+          />
+          <span class="form-message"></span>
+        </div>
+        <div class="form-group">
+          <label for="confirm-password">Confirm password:</label>
+          <input
+            type="password"
+            name="confirm-password"
+            id="confirm-password"
+            placeholder="Confirm password"
+          />
+          <span class="form-message"></span>
+        </div>
+        <button class="form-submit text-white">Register</button>
+      </form>
+    </div>
+    <script src="./validator.js"></script>
+    <script>
+      Validator({
+        form: "#form-1",
+        errorSelector: ".form-message",
+        formGroupSelector: ".form-group",
+        rules: [
+          Validator.isRequired("#full-name"),
+          Validator.isRequired("#email"),
+          Validator.isRequired("#password"),
+          Validator.isRequired("#confirm-password"),
+          Validator.isEmail("#email"),
+          Validator.minLength("#password", 8),
+          Validator.isRequired("#email"),
+
+          Validator.isConfirmed(
+            "#confirm-password",
+            function () {
+              return document.querySelector("#form-1 #password").value;
+            },
+            "Mat khau nhap lai khong chinh xac"
+          ),
+        ],
+        onSubmit: function (data) {
+          // tương lai thực hiện call API trong đây
+          console.log(data);
+        },
+      });
+    </script>
+  </body>
+</html>
