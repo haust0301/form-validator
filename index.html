@@ -55,6 +55,32 @@
         </div>
         <button class="form-submit text-white">Register</button>
       </form>
+      <form action="" class="form" id="form-2">
+        <div class="form-header">
+          <h2>Sign in</h2>
+        </div>
+        <div class="form-group">
+          <label for="sign-in-email">Email: </label>
+          <input
+            type="email"
+            name="sign-in-email"
+            id="sign-in-email"
+            placeholder="Eg. phanthanhhau@gmail.com"
+          />
+          <span class="form-message"></span>
+        </div>
+        <div class="form-group">
+          <label for="sign-in-password">Password: </label>
+          <input
+            type="password"
+            name="sign-in-password"
+            id="sign-in-password"
+            placeholder="Enter password"
+          />
+          <span class="form-message"></span>
+        </div>
+        <button class="form-submit text-white">Sign in</button>
+      </form>
     </div>
     <script src="./validator.js"></script>
     <script>
@@ -70,7 +96,6 @@
           Validator.isEmail("#email"),
           Validator.minLength("#password", 8),
           Validator.isRequired("#email"),
-
           Validator.isConfirmed(
             "#confirm-password",
             function () {
@@ -83,6 +108,16 @@
           // tương lai thực hiện call API trong đây
           console.log(data);
         },
+      });
+
+      Validator({
+        form: "#form-2",
+        errorSelector: ".form-message",
+        formGroupSelector: ".form-group",
+        rules: [
+          Validator.isRequired("#sign-in-email"),
+          Validator.isRequired("#sign-in-password"),
+        ],
       });
     </script>
   </body>
